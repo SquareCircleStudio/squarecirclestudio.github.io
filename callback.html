@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SquareCircle Publisher – login</title>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:60px auto;padding:0 16px;color:#1b1d2a}</style></head>
+<body>
+<h2>SquareCircle Publisher</h2>
+<p id="m">Finishing login…</p>
+<script>
+// OAuth redirect target for SquareCircle Publisher (internal tool).
+// Forwards the authorization code to the tool running on our own computer (localhost only).
+const q = location.search;
+if (q.includes("code=") || q.includes("error=")) {
+  location.replace("http://127.0.0.1:8765/callback" + q);
+} else {
+  document.getElementById("m").textContent = "Nothing to do here.";
+}
+</script>
+</body></html>
